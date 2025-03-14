@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - CampWild</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional styles for image handling */
+        .destination-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+            height: 250px;
+        }
+        
+        .destination-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .destination-card:hover .destination-image img {
+            transform: scale(1.05);
+        }
+        
+        /* Destination card styling */
+        .destination-card {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .destination-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .destination-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .destination-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 10px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .destination-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .destination-meta i {
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
+        
+        .destination-content p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .destination-amenities {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .destination-amenities span {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--gray-light);
+            border-radius: 50%;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .destination-amenities span:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .destination-card .btn {
+            margin-top: auto;
+            width: 100%;
+        }
+        
+        .destination-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVV890ucxekQcqbDCoy1NAF5za8vKE97ts6RXn" alt="CampWild Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html" class="active">Destinations</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="partner.html">Partner with us</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <a href="tel:+91 8639889101" class="phone-number"><i class="fas fa-phone"></i> +91 863-988-9101</a>
+                <a href="signin.html" class="btn btn-outline">Sign In</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner" style="background-image: url('https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVAKoqJFkxjE8n5sMQ1mZV3lN9FwifWCrYBzR7')">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Our Destinations</h1>
+                <p>Discover unique camping experiences in breathtaking locations</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="destinations-filter">
+        <div class="container">
+            <form action="#" method="get" class="filter-form">
+                <div class="filter-group">
+                    <label for="region">Region</label>
+                    <select id="region" name="region">
+                        <option value="">All Regions</option>
+                        <option value="mountains">Mountains</option>
+                        <option value="lakes">Lakes & Rivers</option>
+                        <option value="forests">Forests</option>
+                        <option value="beaches">Beaches</option>
+                        <option value="deserts">Deserts</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="accommodation">Accommodation</label>
+                    <select id="accommodation" name="accommodation">
+                        <option value="">All Types</option>
+                        <option value="tent">Tent Camping</option>
+                        <option value="cabin">Cabins</option>
+                        <option value="glamping">Glamping</option>
+                        <option value="rv">RV Sites</option>
+                        <option value="treehouse">Treehouses</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="price">Price Range</label>
+                    <select id="price" name="price">
+                        <option value="">Any Price</option>
+                        <option value="budget">Budget</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="premium">Premium</option>
+                        <option value="luxury">Luxury</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="amenities">Amenities</label>
+                    <select id="amenities" name="amenities">
+                        <option value="">Any Amenities</option>
+                        <option value="wifi">Wi-Fi</option>
+                        <option value="shower">Hot Showers</option>
+                        <option value="electricity">Electricity</option>
+                        <option value="pets">Pet Friendly</option>
+                        <option value="swimming">Swimming</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Filter Results</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="destinations-list">
+        <div class="container">
+            <h2>Available Camping Destinations</h2>
+            
+            <div class="destinations-grid">
+                <!-- Destination cards will be dynamically generated here -->
+            </div>
+            
+            <div class="pagination">
+                <!-- Pagination will be dynamically generated here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-table">
+        <div class="container">
+            <h2>Destination Comparison</h2>
+            <p class="section-subtitle">Compare our top camping destinations to find your perfect match</p>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Destination</th>
+                            <th>Location</th>
+                            <th>Accommodation Types</th>
+                            <th>Price Range</th>
+                            <th>Amenities</th>
+                            <th>Activities</th>
+                            <th>Best Season</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mountain Retreat</td>
+                            <td>Rocky Mountains</td>
+                            <td>Cabins, Tents, RV Sites</td>
+                            <td>15,999</td>
+                            <td>Wi-Fi, Hot Showers, Electricity, Pet Friendly</td>
+                            <td>Hiking, Fishing, Wildlife Viewing</td>
+                            <td>Summer, Fall</td>
+                        </tr>
+                        <tr>
+                            <td>Lakeside Haven</td>
+                            <td>Blue Lake Region</td>
+                            <td>Tents, Glamping</td>
+                            <td>22,999</td>
+                            <td>Hot Showers, Campfire Pits</td>
+                            <td>Swimming, Fishing, Boating, Kayaking</td>
+                            <td>Summer</td>
+                        </tr>
+                        <tr>
+                            <td>Forest Camp</td>
+                            <td>Redwood Forest</td>
+                            <td>Cabins, Tents</td>
+                            <td>12,899</td>
+                            <td>Wi-Fi, Hot Showers, Hiking Trails</td>
+                            <td>Hiking, Bird Watching, Photography</td>
+                            <td>Spring, Summer, Fall</td>
+                        </tr>
+                        <tr>
+                            <td>Beach Camp</td>
+                            <td>Pacific Coast</td>
+                            <td>Tents, RV Sites</td>
+                            <td>32,999</td>
+                            <td>Hot Showers, Beach Access</td>
+                            <td>Swimming, Surfing, Beachcombing</td>
+                            <td>Summer</td>
+                        </tr>
+                        <tr>
+                            <td>Desert Oasis</td>
+                            <td>Mojave Desert</td>
+                            <td>Glamping, Luxury Tents</td>
+                            <td>21,999</td>
+                            <td>Wi-Fi, Air Conditioning, Private Pools</td>
+                            <td>Stargazing, Desert Hikes, Photography</td>
+                            <td>Spring, Fall</td>
+                        </tr>
+                        <tr>
+                            <td>Treehouse Retreat</td>
+                            <td>Evergreen Forest</td>
+                            <td>Treehouses</td>
+                            <td>51,000</td>
+                            <td>Wi-Fi, Hot Showers, Electricity, Breakfast</td>
+                            <td>Hiking, Zip-lining, Wildlife Viewing</td>
+                            <td>Spring, Summer, Fall</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to book your next adventure?</h2>
+                <p>Choose from our wide selection of camping destinations and create memories that will last a lifetime.</p>
+                <a href="registration-form.html" class="btn btn-secondary">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVV890ucxekQcqbDCoy1NAF5za8vKE97ts6RXn" alt="CampWild Logo" class="footer-logo">
+                    <p>CampWild connects nature lovers with unique outdoor stays and experiences. Discover the wild with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="cancellation.html">Cancellation Policy</a></li>
+                        <li><a href="safety-guidelines.html">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Amrita University, Amritanagar, Ettimadai</p>
+                    <p><i class="fas fa-phone"></i> +91 863-988-9101</p>
+                    <p><i class="fas fa-envelope"></i> info@campwild.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="destinations.js"></script>
+    <script src="theme-toggle.js"></script>
+</body>
+</html>
+

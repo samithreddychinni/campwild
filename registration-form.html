@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Registration - CampWild</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="CampWild Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="partner.html">Partner with us</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <a href="tel:+18005551234" class="phone-number"><i class="fas fa-phone"></i> 1-800-555-1234</a>
+                <a href="signin.html" class="btn btn-outline">Sign In</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="form-container">
+        <div class="container">
+            <div class="form-header">
+                <h1>Camping Registration Form</h1>
+                <p>Please fill out the form below to book your camping experience</p>
+            </div>
+            
+            <form action="booking-confirmation.html" method="post" class="registration-form">
+                <div class="form-section">
+                    <h2>Personal Information</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="state">State/Province</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="zip">Zip/Postal Code</label>
+                            <input type="text" id="zip" name="zip" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" name="country" required>
+                                <option value="">Select Country</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="AU">Australia</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Booking Details</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="destination">Destination</label>
+                            <select id="destination" name="destination" required>
+                                <option value="">Select Destination</option>
+                                <option value="mountain-retreat">Mountain Retreat</option>
+                                <option value="lakeside-haven">Lakeside Haven</option>
+                                <option value="forest-camp">Forest Camp</option>
+                                <option value="beach-camp">Beach Camp</option>
+                                <option value="desert-oasis">Desert Oasis</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="accommodation">Accommodation Type</label>
+                            <select id="accommodation" name="accommodation" required>
+                                <option value="">Select Accommodation</option>
+                                <option value="tent">Tent Camping</option>
+                                <option value="cabin">Cabin</option>
+                                <option value="glamping">Glamping Tent</option>
+                                <option value="rv">RV Site</option>
+                                <option value="treehouse">Treehouse</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="check-in">Check-in Date</label>
+                            <input type="date" id="check-in" name="check-in" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="check-out">Check-out Date</label>
+                            <input type="date" id="check-out" name="check-out" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="adults">Number of Adults</label>
+                            <input type="number" id="adults" name="adults" min="1" max="10" value="2" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="children">Number of Children</label>
+                            <input type="number" id="children" name="children" min="0" max="10" value="0">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Additional Services</h2>
+                    
+                    <div class="form-row checkbox-group">
+                        <div class="form-group">
+                            <input type="checkbox" id="breakfast" name="services[]" value="breakfast">
+                            <label for="breakfast">Breakfast Package ($15 per person per day)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row checkbox-group">
+                        <div class="form-group">
+                            <input type="checkbox" id="guided-hike" name="services[]" value="guided-hike">
+                            <label for="guided-hike">Guided Hiking Tour ($25 per person)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row checkbox-group">
+                        <div class="form-group">
+                            <input type="checkbox" id="equipment" name="services[]" value="equipment">
+                            <label for="equipment">Camping Equipment Rental ($40 per stay)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row checkbox-group">
+                        <div class="form-group">
+                            <input type="checkbox" id="firewood" name="services[]" value="firewood">
+                            <label for="firewood">Firewood Bundle ($10 per bundle)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="special-requests">Special Requests</label>
+                            <textarea id="special-requests" name="special-requests" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Emergency Contact</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emergency-name">Contact Name</label>
+                            <input type="text" id="emergency-name" name="emergency-name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="emergency-phone">Contact Phone</label>
+                            <input type="tel" id="emergency-phone" name="emergency-phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emergency-relation">Relationship</label>
+                            <input type="text" id="emergency-relation" name="emergency-relation" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Payment Information</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="card-name">Name on Card</label>
+                            <input type="text" id="card-name" name="card-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" name="card-number" placeholder="XXXX XXXX XXXX XXXX" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry-date">Expiry Date</label>
+                            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="XXX" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <div class="form-row checkbox-group">
+                        <div class="form-group">
+                            <input type="checkbox" id="terms-agree" name="terms-agree" required>
+                            <label for="terms-agree">I agree to the <a href="terms.html">Terms & Conditions</a> and <a href="cancellation.html">Cancellation Policy</a></label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Complete Booking</button>
+                    <button type="reset" class="btn btn-outline">Clear Form</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo-white.png" alt="CampWild Logo" class="footer-logo">
+                    <p>CampWild connects nature lovers with unique outdoor stays and experiences. Discover the wild with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="cancellation.html">Cancellation Policy</a></li>
+                        <li><a href="safety.html">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Adventure Way, Wilderness, CA 90210</p>
+                    <p><i class="fas fa-phone"></i> 1-800-555-1234</p>
+                    <p><i class="fas fa-envelope"></i> info@campwild.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 CampWild. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/registration.js"></script>
+    <script src="auth.js"></script>
+    <script src="destinations.js"></script>
+    <script src="home.js"></script>
+    <script src="main.js"></script>
+    <script src="registration.js"></script>
+    <script src="theme-toggle.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CampWild</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .about-banner {
+            height: 400px;
+            background-image: url('https://images.unsplash.com/photo-1533873984035-25970ab07461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: 80px;
+        }
+        
+        .about-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-content h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .values-section {
+            padding: 80px 0;
+            background-color: var(--gray-light);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 15px;
+        }
+        
+        .team-section {
+            padding: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .team-member:hover .team-image img {
+            transform: scale(1.05);
+        }
+        
+        .team-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .team-info h3 {
+            margin-bottom: 5px;
+        }
+        
+        .team-info p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .team-social a {
+            width: 36px;
+            height: 36px;
+            background-color: var(--gray-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+        
+        .team-social a:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        @media (max-width: 992px) {
+            .about-grid, .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .about-grid, .values-grid, .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVV890ucxekQcqbDCoy1NAF5za8vKE97ts6RXn" alt="CampWild Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <a href="tel:+918639889101" class="phone-number"><i class="fas fa-phone"></i> +91 863-988-9101</a>
+                <a href="signin.html" class="btn btn-outline">Sign In</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="about-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>About CampWild</h1>
+                <p>Connecting nature lovers with unique outdoor experiences since 2015</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1496545672447-f699b503d270?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="CampWild Story">
+                </div>
+                <div class="about-content">
+                    <h2>Our Story</h2>
+                    <p>CampWild was founded in 2015 by a group of outdoor enthusiasts who were passionate about making nature more accessible to everyone. What started as a small platform connecting campers with private landowners has grown into a comprehensive service offering unique camping experiences across the country.
+
+                    <p>Our founders, Alex Rivera and Jamie Chen, met during a hiking trip in Yosemite and bonded over their shared frustration with the limited options for authentic outdoor experiences. They envisioned a platform that would not only connect people with beautiful camping destinations but also promote sustainable tourism and support local communities.</p>
+                    
+                    <p>Today, CampWild partners with over 500 property owners nationwide, offering everything from basic tent camping to luxury glamping experiences. We remain committed to our core mission: helping people disconnect from their daily routines and reconnect with nature.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <h2>Our Values</h2>
+            <p class="section-subtitle">The principles that guide everything we do at CampWild</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>We promote eco-friendly practices and work with partners who share our commitment to preserving natural environments for future generations.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>We believe in supporting local communities and creating meaningful connections between travelers and hosts.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safety</h3>
+                    <p>We prioritize the safety and well-being of our guests through rigorous standards and comprehensive guidelines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <p class="section-subtitle">The passionate individuals behind CampWild</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVz9qBs52vbqOxJri4uGaj8fd1c26ngyE7weXP" alt="Shruhath Reddy">
+                    </div>
+                    <div class="team-info">
+                        <h3>Shruhath Reddy</h3>
+                        <p>Co-Founder & CEO</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVNJltk7b8bK4Q1dUO0AoYk2WzV9xyGHuNpSqZ" alt="Samith Reddy">
+                    </div>
+                    <div class="team-info">
+                        <h3>Samith Reddy</h3>
+                        <p>Co-Founder & COO</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVtudaY634NcTABxRY65bJvy8srDMqz7Zn3p9j" alt="Likhith">
+                    </div>
+                    <div class="team-info">
+                        <h3>Likhith</h3>
+                        <p>Head of Partnerships</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVz9qBs52vbqOxJri4uGaj8fd1c26ngyE7weXP" alt="Prudhvi">
+                    </div>
+                    <div class="team-info">
+                        <h3>Prudhvi</h3>
+                        <p>Co-Founder & CEO</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVV890ucxekQcqbDCoy1NAF5za8vKE97ts6RXn" alt="CampWild Logo" class="footer-logo">
+                    <p>CampWild connects nature lovers with unique outdoor stays and experiences. Discover the wild with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="cancellation.html">Cancellation Policy</a></li>
+                        <li><a href="safety.html">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Amrita University, Amritanagar, Ettimadai</p>
+                    <p><i class="fas fa-phone"></i> +91 863-988-9101</p>
+                    <p><i class="fas fa-envelope"></i> info@campwild.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 CampWild. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="theme-toggle.js"></script>
+</body>
+</html>
+

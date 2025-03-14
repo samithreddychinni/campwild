@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampWild - Find Your Adventure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <!-- Redirect Script -->
+    <script src="redirect.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVV890ucxekQcqbDCoy1NAF5za8vKE97ts6RXn" alt="CampWild Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <a href="tel:+91 8639889101" class="phone-number"><i class="fas fa-phone"></i>+91 863-988-9101</a>
+                <a href="signin.html" class="btn btn-outline" id="auth-button">Sign In</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your <span>Wild Adventure</span></h1>
+            <p>Cabins, Camping and Glamping in Nature's Embrace</p>
+            <div class="search-container">
+                <form action="search-results.html" method="get">
+                    <div class="search-box">
+                        <input type="text" name="location" placeholder="Where do you want to camp?">
+                        <div class="date-picker">
+                            <input type="date" name="check-in" placeholder="Check-in">
+                            <input type="date" name="check-out" placeholder="Check-out">
+                        </div>
+                        <select name="guests">
+                            <option value="">Guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5+">5+ Guests</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVv0m05I4T6oamsSHzpv04kfK7YZe1NcWU8yOq')"></div>
+            <div class="slide" style="background-image: url('https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVGcEe91NTR14X9W76j3JroMnecKV8wiAUHEB2')"></div>
+            <div class="slide" style="background-image: url('https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVGW0YDcNTR14X9W76j3JroMnecKV8wiAUHEB2')"></div>
+        </div>
+        <div class="slider-controls">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <section class="featured-destinations">
+        <div class="container">
+            <h2>Discover top spots around you</h2>
+            <p class="section-subtitle">Choose from a wide variety of accommodations across the best properties nationwide.</p>
+            
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmV1cabFEp9M3QT8iFLAkhUruX2NWSePpyHGBbE">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Mountain Retreat</h3>
+                        <p>Our flagship property nestled in nature and by a pristine lake</p>
+                        <a href="destination-detail.html?id=1" class="btn btn-text">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVYsB6110nsu7ry1WPLETqUVZpaoJcf8O4gi62">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Lakeside Haven</h3>
+                        <p>Our newest tented campsite in a 1000 acre forest reserve</p>
+                        <a href="destination-detail.html?id=2" class="btn btn-text">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmV07CVp9bcPHvwqgz8horV5XflCGMn9UuxKT3j">
+                    </div>
+                    <div class="destination-content">
+                        <h3>CampWild Journeys</h3>
+                        <p>New! Curated campervan tours to select destinations</p>
+                        <a href="destination-detail.html?id=3" class="btn btn-text">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-link">
+                <a href="destinations.html" class="btn btn-outline-dark">View All Destinations</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-types">
+        <div class="container">
+            <h2>Experiences for every adventurer</h2>
+            <p class="section-subtitle">From peaceful retreats to adrenaline-pumping activities</p>
+            
+            <div class="experience-grid">
+                <a href="experiences.html?type=glamping" class="experience-item">
+                    <div class="experience-icon">
+                        <i class="fas fa-campground"></i>
+                    </div>
+                    <h3>Glamping</h3>
+                </a>
+                
+                <a href="experiences.html?type=hiking" class="experience-item">
+                    <div class="experience-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>Hiking</h3>
+                </a>
+                
+                <a href="experiences.html?type=fishing" class="experience-item">
+                    <div class="experience-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3>Fishing</h3>
+                </a>
+                
+                <a href="experiences.html?type=wildlife" class="experience-item">
+                    <div class="experience-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Wildlife</h3>
+                </a>
+                
+                <a href="experiences.html?type=stargazing" class="experience-item">
+                    <div class="experience-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Stargazing</h3>
+                </a>
+                
+                <a href="experiences.html?type=adventure" class="experience-item">
+                    <div class="experience-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Adventure</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What our campers say</h2>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <p>"The most amazing camping experience we've ever had. The staff was friendly, the location was breathtaking, and the amenities were perfect."</p>
+                        <div class="testimonial-author">
+                            <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVz9qBs52vbqOxJri4uGaj8fd1c26ngyE7weXP" alt="Samith Reddy">
+                            <div>
+                                <h4>Samith Reddy</h4>
+                                <p>Mountain Retreat, June 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"CampWild made our family vacation unforgettable. The kids loved the activities and we loved the peace and quiet of nature."</p>
+                        <div class="testimonial-author">
+                            <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVNJltk7b8bK4Q1dUO0AoYk2WzV9xyGHuNpSqZ" alt="Shruhath Reddy">
+                            <div>
+                                <h4>Shruhath Reddy</h4>
+                                <p>Lakeside Haven, August 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"If you're looking for a glamping experience that doesn't compromise on comfort while being close to nature, CampWild is the place to go!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVtudaY634NcTABxRY65bJvy8srDMqz7Zn3p9j" alt="Likhith">
+                            <div>
+                                <h4>Likhith</h4>
+                                <p>CampWild Journeys, July 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join our community of adventurers</h2>
+                <p>Subscribe to our newsletter and get exclusive offers, travel tips, and early access to new destinations.</p>
+                <form action="thank-you.html" method="get" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVV890ucxekQcqbDCoy1NAF5za8vKE97ts6RXn" alt="CampWild Logo" class="footer-logo">
+                    <p>CampWild connects nature lovers with unique outdoor stays and experiences. Discover the wild with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/samithreddychinni/CAMP-WILD" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="cancellation.html">Cancellation Policy</a></li>
+                        <li><a href="safety-guidelines.html">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Amrita University, Amritanagar, Ettimadai</p>
+                    <p><i class="fas fa-phone"></i> +91 863-988-9101</p>
+                    <p><i class="fas fa-envelope"></i> info@campwild.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC6K7BPWYAUKQtFJf4Fcvis0VOi-VRKoz8",
+            authDomain: "camp-wild-1a5cf.firebaseapp.com",
+            projectId: "camp-wild-1a5cf",
+            storageBucket: "camp-wild-1a5cf.firebasestorage.app",
+            messagingSenderId: "673052797100",
+            appId: "1:673052797100:web:2c704b1ad0e45637735709",
+            measurementId: "G-BNMCYSTY0E"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        // Check authentication state
+        firebase.auth().onAuthStateChanged((user) => {
+            const authButton = document.getElementById('auth-button');
+            
+            if (user) {
+                // User is signed in
+                authButton.textContent = 'Sign Out';
+                authButton.href = '#';
+                authButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    firebase.auth().signOut().then(() => {
+                        window.location.href = 'signin.html';
+                    }).catch((error) => {
+                        console.error('Sign out error:', error);
+                    });
+                });
+            } else {
+                // User is signed out
+                authButton.textContent = 'Sign In';
+                authButton.href = 'signin.html';
+            }
+        });
+    </script>
+
+    <script src="main.js"></script>
+    <script src="home.js"></script>
+    <script src="theme-toggle.js"></script>
+</body>
+</html>
+

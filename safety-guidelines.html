@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Guidelines - CampWild</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .safety-banner {
+            height: 250px;
+            background-image: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: 80px;
+        }
+        
+        .safety-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .safety-section {
+            padding: 60px 0;
+        }
+        
+        .safety-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .safety-container h2 {
+            text-align: left;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .safety-container h2:first-child {
+            margin-top: 0;
+        }
+        
+        .safety-container p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .safety-container ul, .safety-container ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .safety-container li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        .safety-container a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        .safety-container a:hover {
+            text-decoration: none;
+        }
+        
+        .safety-card {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .safety-card h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .safety-card p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .safety-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .emergency-contacts {
+            background-color: #ffebee;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-top: 40px;
+            border-left: 4px solid #f44336;
+        }
+        
+        .emergency-contacts h3 {
+            color: #f44336;
+            margin-top: 0;
+        }
+        
+        .emergency-contacts ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .emergency-contacts li {
+            margin-bottom: 10px;
+        }
+        
+        .emergency-contacts li strong {
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .safety-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://i.imgur.com/8KIlMBE.png" alt="CampWild Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <a href="tel:+18005551234" class="phone-number"><i class="fas fa-phone"></i> 1-800-555-1234</a>
+                <a href="signin.html" class="btn btn-outline">Sign In</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="safety-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Safety Guidelines</h1>
+                <p>Your safety is our top priority. Follow these guidelines for a safe and enjoyable outdoor experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="safety-section">
+        <div class="container">
+            <div class="safety-container">
+                <h2>General Safety Guidelines</h2>
+                <p>At CampWild, we want you to have an amazing outdoor experience while staying safe. Please review and follow these safety guidelines before and during your stay.</p>
+                
+                <div class="safety-card">
+                    <div class="safety-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <h3>Before You Go</h3>
+                    <ul>
+                        <li>Research your destination thoroughly, including weather conditions, terrain, and potential hazards.</li>
+                        <li>Share your itinerary with a trusted friend or family member who is not joining the trip.</li>
+                        <li>Check that you have all necessary permits and reservations.</li>
+                        <li>Pack appropriate clothing, gear, and emergency supplies.</li>
+                        <li>Ensure your mobile phone is fully charged and consider bringing a portable charger.</li>
+                        <li>Download offline maps of the area you'll be visiting.</li>
+                    </ul>
+                </div>
+                
+                <h2>Campsite Safety</h2>
+                <div class="safety-card">
+                    <div class="safety-icon"><i class="fas fa-campground"></i></div>
+                    <h3>Setting Up Camp</h3>
+                    <ul>
+                        <li>Choose a designated campsite or a durable surface to minimize environmental impact.</li>
+                        <li>Avoid camping under dead trees or branches that could fall.</li>
+                        <li>Keep a safe distance from cliff edges, water sources, and wildlife trails.</li>
+                        <li>Store food properly in sealed containers or bear-proof storage when available.</li>
+                        <li>Keep your campsite clean and organized to prevent trips and falls.</li>
+                    </ul>
+                </div>
+                
+                <div class="safety-card">
+                    <div class="safety-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Fire Safety</h3>
+                    <ul>
+                        <li>Check if campfires are permitted in your camping area before starting one.</li>
+                        <li>Use established fire rings or fire pans when available.</li>
+                        <li>Keep fires small and manageable.</li>
+                        <li>Never leave a fire unattended.</li>
+                        <li>Keep a bucket of water and shovel nearby to extinguish the fire.</li>
+                        <li>Fully extinguish your campfire before sleeping or leaving the campsite.</li>
+                        <li>Ensure ashes are cool to the touch before departing.</li>
+                    </ul>
+                </div>
+                
+                <h2>Outdoor Activities Safety</h2>
+                <div class="safety-card">
+                    <div class="safety-icon"><i class="fas fa-hiking"></i></div>
+                    <h3>Hiking and Trekking</h3>
+                    <ul>
+                        <li>Stay on marked trails and respect trail closures.</li>
+                        <li>Hike with a partner or group whenever possible.</li>
+                        <li>Carry a map, compass, or GPS device and know how to use them.</li>
+                        <li>Pace yourself and take regular breaks, especially at high altitudes.</li>
+                        <li>Carry sufficient water and snacks.</li>
+                        <li>Wear appropriate footwear and clothing for the terrain and weather.</li>
+                        <li>Be aware of changing weather conditions and have a plan to seek shelter if needed.</li>
+                    </ul>
+                </div>
+                
+                <div class="safety-card">
+                    <div class="safety-icon"><i class="fas fa-water"></i></div>
+                    <h3>Water Activities</h3>
+                    <ul>
+                        <li>Always wear a properly fitted life jacket when boating, kayaking, or participating in water activities.</li>
+                        <li>Never swim alone and be aware of your swimming abilities and limitations.</li>
+                        <li>Check water conditions, including temperature, currents, and depth before entering.</li>
+                        <li>Avoid alcohol consumption before or during water activities.</li>
+                        <li>Keep a close eye on children near water at all times.</li>
+                        <li>Be cautious of slippery rocks and uneven surfaces near water.</li>
+                    </ul>
+                </div>
+                
+                <h2>Wildlife Safety</h2>
+                <div class="safety-card">
+                    <div class="safety-icon"><i class="fas fa-paw"></i></div>
+                    <h3>Encountering Wildlife</h3>
+                    <ul>
+                        <li>Observe wildlife from a distance. Never approach, feed, or touch wild animals.</li>
+                        <li>Store food, trash, and scented items securely to avoid attracting wildlife.</li>
+                        <li>Make noise while hiking to avoid surprising animals.</li>
+                        <li>Learn about the specific wildlife in your destination area and how to respond to encounters.</li>
+                        <li>If you encounter a large predator, make yourself look big, make noise, and back away slowly.</li>
+                        <li>Keep pets leashed and under control at all times.</li>
+                    </ul>
+                </div>
+                
+                <h2>Weather Safety</h2>
+                <div class="safety-card">
+                    <div class="safety-icon"><i class="fas fa-cloud-sun-rain"></i></div>
+                    <h3>Weather Preparedness</h3>
+                    <ul>
+                        <li>Check weather forecasts before and during your trip.</li>
+                        <li>Be prepared for sudden weather changes with appropriate clothing and gear.</li>
+                        <li>Know the signs of hypothermia, heat exhaustion, and heat stroke.</li>
+                        <li>Seek shelter immediately during thunderstorms and stay away from tall objects.</li>
+                        <li>Apply sunscreen regularly, even on cloudy days.</li>
+                        <li>Stay hydrated and drink water regularly, especially in hot weather.</li>
+                    </ul>
+                </div>
+                
+                <h2>Health and First Aid</h2>
+                <div class="safety-card">
+                    <div class="safety-icon"><i class="fas fa-first-aid"></i></div>
+                    <h3>Medical Preparedness</h3>
+                    <ul>
+                        <li>Carry a well-stocked first aid kit and know how to use its contents.</li>
+                        <li>Bring any personal medications you might need.</li>
+                        <li>Learn basic first aid skills before your trip.</li>
+                        <li>Be aware of the nearest medical facilities to your camping location.</li>
+                        <li>Consider carrying a whistle or other signaling device for emergencies.</li>
+                        <li>Stay properly hydrated and nourished throughout your trip.</li>
+                    </ul>
+                </div>
+                
+                <div class="emergency-contacts">
+                    <h3>Emergency Contacts</h3>
+                    <ul>
+                        <li><strong>Emergency Services:</strong> 911</li>
+                        <li><strong>CampWild Emergency Hotline:</strong> 1-800-555-9876</li>
+                        <li><strong>Poison Control:</strong> 1-800-222-1222</li>
+                        <li><strong>Park Ranger Station:</strong> Contact information provided in your booking confirmation</li>
+                    </ul>
+                    <p>We recommend saving these numbers in your phone and writing them down on a card to keep in your wallet.</p>
+                </div>
+                
+                <p>Remember, your safety is ultimately your responsibility. By following these guidelines and using common sense, you can help ensure a safe and enjoyable outdoor experience with CampWild.</p>
+                
+                <p>If you have any questions about safety at a specific destination, please <a href="contact.html">contact us</a> before your trip.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="https://i.imgur.com/8KIlMBE.png" alt="CampWild Logo" class="footer-logo">
+                    <p>CampWild connects nature lovers with unique outdoor stays and experiences. Discover the wild with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="cancellation.html">Cancellation Policy</a></li>
+                        <li><a href="safety-guidelines.html">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Adventure Way, Wilderness, CA 90210</p>
+                    <p><i class="fas fa-phone"></i> 1-800-555-1234</p>
+                    <p><i class="fas fa-envelope"></i> info@campwild.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="theme-toggle.js"></script>
+</body>
+</html>
+

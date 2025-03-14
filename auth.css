@@ -1,0 +1,165 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 120px 20px 60px;
+    background-color: var(--gray-light);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.auth-header {
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid var(--gray);
+}
+
+.auth-header h1 {
+    margin-bottom: 10px;
+}
+
+.auth-header p {
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+.auth-form {
+    padding: 30px;
+}
+
+.password-input {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--gray-dark);
+    cursor: pointer;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    width: auto;
+    margin-right: 8px;
+}
+
+.remember-me label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.forgot-password {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.social-login {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-login p {
+    position: relative;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background-color: var(--gray);
+}
+
+.social-login p::before {
+    left: 0;
+}
+
+.social-login p::after {
+    right: 0;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-social {
+    flex: 1;
+    background-color: var(--white);
+    border: 1px solid var(--gray);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-social i {
+    margin-right: 8px;
+}
+
+.btn-google:hover {
+    background-color: #DB4437;
+    border-color: #DB4437;
+    color: var(--white);
+}
+
+.btn-facebook:hover {
+    background-color: #4267B2;
+    border-color: #4267B2;
+    color: var(--white);
+}
+
+.auth-footer {
+    padding: 20px 30px;
+    text-align: center;
+    border-top: 1px solid var(--gray);
+    background-color: var(--gray-light);
+}
+
+.auth-footer p {
+    margin-bottom: 0;
+}
+
+.auth-footer a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+@media (max-width: 576px) {
+    .social-buttons {
+        flex-direction: column;
+    }
+}

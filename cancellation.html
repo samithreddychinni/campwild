@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancellation Policy - CampWild</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .policy-banner {
+            height: 250px;
+            background-image: url('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: 80px;
+        }
+        
+        .policy-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .policy-section {
+            padding: 60px 0;
+        }
+        
+        .policy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .policy-container h2 {
+            text-align: left;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .policy-container h2:first-child {
+            margin-top: 0;
+        }
+        
+        .policy-container p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .policy-container ul, .policy-container ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .policy-container li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        .policy-container a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        .policy-container a:hover {
+            text-decoration: none;
+        }
+        
+        .policy-meta {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray);
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .policy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        
+        .policy-table th, .policy-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .policy-table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .policy-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .policy-table tr:hover td {
+            background-color: var(--gray-light);
+        }
+        
+        .contact-cta {
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .contact-cta h3 {
+            margin-bottom: 15px;
+        }
+        
+        .contact-cta p {
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 30px 20px;
+            }
+            
+            .policy-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVV890ucxekQcqbDCoy1NAF5za8vKE97ts6RXn" alt="CampWild Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <a href="tel:+918639889101" class="phone-number"><i class="fas fa-phone"></i> +91 863-988-9101</a>
+                <a href="signin.html" class="btn btn-outline">Sign In</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="policy-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Cancellation Policy</h1>
+                <p>Understanding our booking cancellation and refund policies</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="policy-section">
+        <div class="container">
+            <div class="policy-container">
+                <h2>1. Overview</h2>
+                <p>At CampWild, we understand that plans can change. Our cancellation policy is designed to be fair to both our guests and our hosts. This policy outlines the terms and conditions for cancellations, modifications, and refunds for bookings made through our platform.</p>
+                
+                <h2>2. Standard Cancellation Policy</h2>
+                <p>Our standard cancellation policy applies to most bookings unless otherwise specified on the listing. Refunds are determined by how far in advance you cancel.</p>
+                
+                <table class="policy-table">
+                    <thead>
+                        <tr>
+                            <th>Cancellation Timeframe</th>
+                            <th>Refund Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>14+ days before check-in</td>
+                            <td>Full refund (100%)</td>
+                        </tr>
+                        <tr>
+                            <td>7-13 days before check-in</td>
+                            <td>Partial refund (50%)</td>
+                        </tr>
+                        <tr>
+                            <td>Less than 7 days before check-in</td>
+                            <td>No refund (0%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>Please note that the service fee is non-refundable unless you cancel within 48 hours of booking and at least 14 days before check-in.</p>
+                
+                <h2>3. Flexible Cancellation Policy</h2>
+                <p>Some of our hosts offer a more flexible cancellation policy. Listings with this policy will be clearly marked.</p>
+                
+                <table class="policy-table">
+                    <thead>
+                        <tr>
+                            <th>Cancellation Timeframe</th>
+                            <th>Refund Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>7+ days before check-in</td>
+                            <td>Full refund (100%)</td>
+                        </tr>
+                        <tr>
+                            <td>3-6 days before check-in</td>
+                            <td>Partial refund (50%)</td>
+                        </tr>
+                        <tr>
+                            <td>Less than 3 days before check-in</td>
+                            <td>No refund (0%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h2>4. Strict Cancellation Policy</h2>
+                <p>Premium and high-demand properties may have a stricter cancellation policy. These listings will be clearly marked.</p>
+                
+                <table class="policy-table">
+                    <thead>
+                        <tr>
+                            <th>Cancellation Timeframe</th>
+                            <th>Refund Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>30+ days before check-in</td>
+                            <td>Full refund (100%)</td>
+                        </tr>
+                        <tr>
+                            <td>14-29 days before check-in</td>
+                            <td>Partial refund (50%)</td>
+                        </tr>
+                        <tr>
+                            <td>Less than 14 days before check-in</td>
+                            <td>No refund (0%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h2>5. Extenuating Circumstances</h2>
+                <p>In certain situations, you may be eligible for a refund under our Extenuating Circumstances Policy, even if you cancel after the refund deadline. Eligible circumstances include:</p>
+                
+                <ul>
+                    <li>Unexpected serious illness or injury affecting you or a travel companion</li>
+                    <li>Death of a family member or travel companion</li>
+                    <li>Government-mandated obligations (jury duty, travel restrictions, etc.)</li>
+                    <li>Severe natural disasters or severe weather incidents at the destination</li>
+                    <li>Significant transportation disruptions that make it impossible to reach your destination</li>
+                </ul>
+                
+                <p>Documentation may be required to verify extenuating circumstances.</p>
+                
+                <h2>6. Cancellation Process</h2>
+                <p>To cancel a reservation:</p>
+                
+                <ol>
+                    <li>Log in to your CampWild account</li>
+                    <li>Go to "My Trips" or "Bookings"</li>
+                    <li>Select the reservation you wish to cancel</li>
+                    <li>Click on "Cancel Reservation"</li>
+                    <li>Follow the prompts to complete the cancellation</li>
+                </ol>
+                
+                <p>You will receive an email confirmation once your cancellation has been processed.</p>
+                
+                <h2>7. Modifications to Bookings</h2>
+                <p>If you need to modify your booking (change dates, number of guests, etc.), please contact us at least 7 days before your scheduled arrival. Modifications are subject to availability and may result in price adjustments.</p>
+                
+                <h2>8. No-Shows</h2>
+                <p>If you do not show up for your reservation without prior cancellation, you will be charged the full amount of the booking with no refund.</p>
+                
+                <h2>9. Host Cancellations</h2>
+                <p>In the rare event that a host needs to cancel a reservation, you will receive a full refund, including all fees. We will also assist you in finding alternative accommodations.</p>
+                
+                <div class="contact-cta">
+                    <h3>Need Help?</h3>
+                    <p>If you have any questions about our cancellation policy or need assistance with a cancellation, please don't hesitate to contact our customer support team.</p>
+                    <a href="contact.html" class="btn btn-primary">Contact Support</a>
+                </div>
+                
+                <div class="policy-meta">
+                    <p>Last Updated: June 1, 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVV890ucxekQcqbDCoy1NAF5za8vKE97ts6RXn" alt="CampWild Logo" class="footer-logo">
+                    <p>CampWild connects nature lovers with unique outdoor stays and experiences. Discover the wild with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="cancellation.html">Cancellation Policy</a></li>
+                        <li><a href="safety.html">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Amrita University, Amritanagar, Ettimadai</p>
+                    <p><i class="fas fa-phone"></i> +91 863-988-9101</p>
+                    <p><i class="fas fa-envelope"></i> info@campwild.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 CampWild. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="theme-toggle.js"></script>
+</body>
+</html>
+

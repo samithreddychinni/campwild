@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - CampWild</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .faq-banner {
+            height: 300px;
+            background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: 80px;
+        }
+        
+        .faq-banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .faq-section {
+            padding: 80px 0;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .faq-tab {
+            padding: 10px 20px;
+            background-color: var(--gray-light);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .faq-tab.active, .faq-tab:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .faq-accordion {
+            margin-bottom: 40px;
+        }
+        
+        .faq-item {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background-color: var(--gray-light);
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+            border-top: 1px solid var(--gray);
+        }
+        
+        .contact-cta {
+            text-align: center;
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-cta h2 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-cta p {
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .faq-tab {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVV890ucxekQcqbDCoy1NAF5za8vKE97ts6RXn" alt="CampWild Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <a href="tel:+918639889101" class="phone-number"><i class="fas fa-phone"></i> +91 863-988-9101</a>
+                <a href="signin.html" class="btn btn-outline">Sign In</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="faq-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Frequently Asked Questions</h1>
+                <p>Find answers to common questions about CampWild</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container">
+                <div class="faq-tabs">
+                    <div class="faq-tab active" data-category="general">General</div>
+                    <div class="faq-tab" data-category="booking">Booking & Reservations</div>
+                    <div class="faq-tab" data-category="payment">Payment & Pricing</div>
+                    <div class="faq-tab" data-category="cancellation">Cancellation & Refunds</div>
+                    <div class="faq-tab" data-category="experience">Experiences</div>
+                </div>
+                
+                <div class="faq-accordion" id="general">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <span>What is CampWild?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>CampWild is a platform that connects nature lovers with unique outdoor stays and experiences. We offer a wide range of camping options, from traditional tent camping to luxury glamping, as well as curated outdoor activities and adventures.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I create an account?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Creating an account is easy! Simply click on the "Sign In" button in the top right corner of the website, then select "Create an Account." You'll need to provide your name, email address, and create a password. You can also sign up using your Google or Facebook account for faster registration.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What destinations do you offer?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We currently offer camping destinations across various landscapes including mountains, forests, lakes, beaches, and deserts. Our properties are located throughout the United States, with plans to expand internationally in the near future. You can browse all available destinations on our <a href="destinations.html">Destinations page</a>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is CampWild suitable for families with children?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Many of our destinations and experiences are family-friendly and offer activities suitable for children of various ages. Each listing includes information about family-friendliness and age recommendations for activities. We also offer family discounts on many of our bookings.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-accordion" id="booking" style="display: none;">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How far in advance should I book?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We recommend booking at least 2-3 months in advance for popular destinations, especially during peak season (summer months and holidays). Some of our premium experiences and glamping accommodations can be booked up to 6 months in advance. Last-minute bookings are sometimes available, but selection may be limited.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What is the minimum/maximum stay duration?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Most of our destinations have a minimum stay of 1-2 nights, though this may vary by location and season. There is typically no maximum stay duration, though stays longer than 14 days may require special arrangements. The specific minimum stay requirements are listed on each destination's booking page.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I modify my reservation after booking?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can modify your reservation through your account dashboard. Changes to dates, number of guests, or adding experiences are subject to availability and may result in price adjustments. Modifications must be made at least 7 days before your scheduled arrival date. For assistance with modifications, please contact our customer support team.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-accordion" id="payment" style="display: none;">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What payment methods do you accept?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept all major credit cards (Visa, Mastercard, American Express, Discover), PayPal, and Apple Pay. For some destinations, we also offer payment plans through Affirm. All payments are processed securely through our encrypted payment system.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is there a security deposit required?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Some of our destinations require a security deposit, particularly for glamping accommodations and premium experiences. The deposit amount varies by location and is clearly indicated during the booking process. Security deposits are fully refundable within 7 days after your stay, provided there is no damage to the property or equipment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Are there any hidden fees?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We pride ourselves on transparency. All mandatory fees are included in the price displayed during booking. These may include cleaning fees, service fees, and applicable taxes. Optional add-ons such as equipment rentals, guided experiences, or meal packages are clearly marked as additional costs.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-accordion" id="cancellation" style="display: none;">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What is your cancellation policy?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our standard cancellation policy offers a full refund if cancelled 14 days or more before the scheduled arrival date. Cancellations made 7-13 days before arrival receive a 50% refund. Cancellations less than 7 days before arrival are not eligible for a refund. Some destinations may have different policies, which will be clearly indicated on the booking page. For detailed information, please see our <a href="cancellation.html">Cancellation Policy</a>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you offer trip insurance?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer optional trip insurance through our partner, TravelGuard. This insurance covers cancellations due to illness, injury, severe weather, and other unforeseen circumstances. The cost is typically 5-7% of your total booking and can be added during the checkout process.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What happens if the weather is bad during my stay?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We understand that outdoor activities are weather-dependent. If severe weather conditions make your stay unsafe, we will work with you to reschedule or provide a credit for future use. For minor weather disruptions, our hosts are prepared with alternative activities and accommodations. We recommend checking the weather forecast before your trip and packing accordingly.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-accordion" id="experience" style="display: none;">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What equipment is provided for camping?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The equipment provided varies by destination and accommodation type. For glamping and cabin stays, all necessary bedding, cooking equipment, and basic amenities are typically included. For traditional camping, you may need to bring your own tent and sleeping gear, or rent them for an additional fee. Each listing specifies exactly what is provided and what you need to bring.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Are guided activities included in the booking price?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Most guided activities and experiences are priced separately from accommodation bookings, allowing you to customize your stay. Some packages may include certain activities. You can browse and book experiences on our <a href="experiences.html">Experiences page</a> or add them during the accommodation booking process.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do I need prior experience for activities like hiking or fishing?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer activities for all skill levels, from beginner to advanced. Each experience listing includes information about the difficulty level and any prerequisites. For beginners, we provide instruction and all necessary equipment. For more advanced activities, our guides will ensure you have the skills needed before participation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <h2>Still have questions?</h2>
+                    <p>If you couldn't find the answer you were looking for, our customer support team is here to help. Reach out to us via phone, email, or the contact form.</p>
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVV890ucxekQcqbDCoy1NAF5za8vKE97ts6RXn" alt="CampWild Logo" class="footer-logo">
+                    <p>CampWild connects nature lovers with unique outdoor stays and experiences. Discover the wild with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="cancellation.html">Cancellation Policy</a></li>
+                        <li><a href="safety.html">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Adventure Way, Wilderness, CA 90210</p>
+                    <p><i class="fas fa-phone"></i> 1-800-555-1234</p>
+                    <p><i class="fas fa-envelope"></i> info@campwild.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 CampWild. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="theme-toggle.js"></script>
+    <script>
+        // FAQ Accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Item Toggle
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // Toggle active class on clicked item
+                    item.classList.toggle('active');
+                    
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // FAQ Category Tabs
+            const faqTabs = document.querySelectorAll('.faq-tab');
+            const faqAccordions = document.querySelectorAll('.faq-accordion');
+            
+            faqTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    faqTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Hide all accordions
+                    faqAccordions.forEach(accordion => {
+                        accordion.style.display = 'none';
+                    });
+                    
+                    // Show the selected accordion
+                    const category = this.dataset.category;
+                    document.getElementById(category).style.display = 'block';
+                    
+                    // Reset accordion items (close all)
+                    faqItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open the first item in the selected category
+                    const firstItem = document.getElementById(category).querySelector('.faq-item');
+                    if (firstItem) {
+                        firstItem.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
