@@ -13,7 +13,7 @@ const allDestinations = [
     image:
       "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "mountains",
-    price: "$100/night",
+    price: "₹8,300/night",
     amenities: ["Wi-Fi", "Hot Showers", "Electricity", "Pet Friendly"],
     activities: ["hiking", "fishing", "wildlife", "adventure"],
   },
@@ -25,7 +25,7 @@ const allDestinations = [
     image:
       "https://images.unsplash.com/photo-1510312305653-8ed496efae75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "lakes",
-    price: "$85/night",
+    price: "₹7,000/night",
     amenities: ["Hot Showers", "Fishing", "Swimming"],
     activities: ["fishing", "swimming", "wildlife", "adventure"],
   },
@@ -37,7 +37,7 @@ const allDestinations = [
     image:
       "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "forests",
-    price: "$75/night",
+    price: "₹6,200/night",
     amenities: ["Wi-Fi", "Hot Showers", "Hiking Trails"],
     activities: ["hiking", "wildlife", "adventure"],
   },
@@ -49,7 +49,7 @@ const allDestinations = [
     image:
       "https://images.unsplash.com/photo-1520454974749-611b7248ffdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "beaches",
-    price: "$90/night",
+    price: "₹7,500/night",
     amenities: ["Hot Showers", "Swimming", "Surfing"],
     activities: ["swimming", "adventure"],
   },
@@ -59,9 +59,9 @@ const allDestinations = [
     location: "Mojave Desert",
     description: "Experience the magic of desert nights in our luxury glamping tents with private pools.",
     image:
-      "https://images.unsplash.com/photo-1542401886-65d6c61db217?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1542401886-65d6c61db217?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "deserts",
-    price: "$110/night",
+    price: "₹9,100/night",
     amenities: ["Wi-Fi", "Air Conditioning", "Private Pool", "Stargazing"],
     activities: ["stargazing", "adventure", "glamping"],
   },
@@ -72,7 +72,7 @@ const allDestinations = [
     description: "Live among the treetops in our custom-built luxury treehouses with panoramic views.",
     image: "https://images.pexels.com/photos/2480608/pexels-photo-2480608.jpeg?auto=compress&cs=tinysrgb&w=800",
     category: "forests",
-    price: "$150/night",
+    price: "₹12,400/night",
     amenities: ["Wi-Fi", "Hot Showers", "Electricity", "Breakfast"],
     activities: ["hiking", "wildlife", "adventure", "glamping"],
   },
@@ -84,7 +84,7 @@ const allDestinations = [
     image:
       "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "mountains",
-    price: "$120/night",
+    price: "₹9,900/night",
     amenities: ["Wi-Fi", "Hot Showers", "Fireplace", "Restaurant"],
     activities: ["hiking", "wildlife", "adventure", "glamping"],
   },
@@ -96,7 +96,7 @@ const allDestinations = [
     image:
       "https://images.unsplash.com/photo-1510312305653-8ed496efae75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "lakes",
-    price: "$65/night",
+    price: "₹5,400/night",
     amenities: ["Fishing", "Rafting", "Campfire Pits"],
     activities: ["fishing", "adventure"],
   },
@@ -108,7 +108,7 @@ const allDestinations = [
     image:
       "https://images.unsplash.com/photo-1520454974749-611b7248ffdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     category: "beaches",
-    price: "$130/night",
+    price: "₹10,800/night",
     amenities: ["Wi-Fi", "Hot Tub", "Beach Access", "Gourmet Kitchen"],
     activities: ["swimming", "adventure", "glamping"],
   },
