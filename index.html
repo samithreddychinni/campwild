@@ -12,10 +12,10 @@
     <link rel="icon" href="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVV890ucxekQcqbDCoy1NAF5za8vKE97ts6RXn" type="image/png">
     <title>CampWild - Find Your Adventure</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Firebase SDK -->
+    
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
-    <!-- Redirect Script -->
+    
     <script src="redirect.js"></script>
 </head>
 <body>
@@ -291,7 +291,7 @@
     </footer>
 
     <script>
-        // Firebase configuration
+        
         const firebaseConfig = {
             apiKey: "AIzaSyC6K7BPWYAUKQtFJf4Fcvis0VOi-VRKoz8",
             authDomain: "camp-wild-1a5cf.firebaseapp.com",
@@ -302,15 +302,15 @@
             measurementId: "G-BNMCYSTY0E"
         };
         
-        // Initialize Firebase
+        
         firebase.initializeApp(firebaseConfig);
         
-        // Check authentication state
+        
         firebase.auth().onAuthStateChanged((user) => {
             const authButton = document.getElementById('auth-button');
             
             if (user) {
-                // User is signed in
+                
                 authButton.textContent = 'Sign Out';
                 authButton.href = '#';
                 authButton.addEventListener('click', (e) => {
@@ -322,7 +322,7 @@
                     });
                 });
             } else {
-                // User is signed out
+                
                 authButton.textContent = 'Sign In';
                 authButton.href = 'signin.html';
             }

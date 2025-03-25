@@ -11,7 +11,7 @@
     <link rel="icon" href="https://o8yakt46s5.ufs.sh/f/4xdO7YSh0AmVV890ucxekQcqbDCoy1NAF5za8vKE97ts6RXn" type="image/png">
     <title>Sign In - CampWild</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Firebase SDK -->
+    
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
     <style>
@@ -38,7 +38,7 @@
         }
         .auth-container {
             width: 100%;
-            max-width: 550px; /* Increased width */
+            max-width: 550px; 
             padding: 30px;
         }
         .auth-card {
@@ -132,7 +132,7 @@
     </div>
 
     <script>
-        // Firebase configuration
+        
         const firebaseConfig = {
             apiKey: "AIzaSyC6K7BPWYAUKQtFJf4Fcvis0VOi-VRKoz8",
             authDomain: "camp-wild-1a5cf.firebaseapp.com",
@@ -143,16 +143,16 @@
             measurementId: "G-BNMCYSTY0E"
         };
         
-        // Initialize Firebase
+        
         firebase.initializeApp(firebaseConfig);
         
-        // Get elements
+        
         const signinForm = document.getElementById('signin-form');
         const emailInput = document.getElementById('email');
         const passwordInput = document.getElementById('password');
         const errorMessage = document.getElementById('error-message');
         
-        // Toggle password visibility
+        
         const togglePasswordButtons = document.querySelectorAll(".toggle-password");
         togglePasswordButtons.forEach((button) => {
             button.addEventListener("click", function () {
@@ -171,7 +171,7 @@
             });
         });
         
-        // Email/Password Sign In
+        
         signinForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -180,24 +180,24 @@
             
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
-                    // Signed in successfully
+                    
                     const user = userCredential.user;
                     console.log("User signed in:", user);
-                    window.location.href = "index.html"; // Redirect to home page
+                    window.location.href = "index.html"; 
                 })
                 .catch((error) => {
-                    // Handle errors
+                    
                     const errorCode = error.code;
                     const errorMsg = error.message;
                     console.error("Sign in error:", errorCode, errorMsg);
                     
-                    // Display error message
+                    
                     errorMessage.textContent = getErrorMessage(errorCode);
                     errorMessage.style.display = "block";
                 });
         });
         
-        // Helper function to get user-friendly error messages
+        
         function getErrorMessage(errorCode) {
             switch(errorCode) {
                 case 'auth/invalid-email':
@@ -213,17 +213,15 @@
             }
         }
         
-        // Fix for the redirection glitch
-        // Only check authentication state if explicitly requested
-        // This prevents automatic redirection when on the signin page
+
         const urlParams = new URLSearchParams(window.location.search);
         const checkAuth = urlParams.get('checkAuth');
         
         if (checkAuth === 'true') {
-            // Check if user is already signed in
+            
             firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
-                    // User is signed in, redirect to home page
+                    
                     window.location.href = "index.html";
                 }
             });

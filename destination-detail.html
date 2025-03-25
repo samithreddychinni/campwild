@@ -201,7 +201,7 @@
                 </ul>
             </nav>
             <div class="nav-buttons">
-                <a href="tel:+18005551234" class="phone-number"><i class="fas fa-phone"></i> 1-800-555-1234</a>
+                <a href="tel:+91 8639889101" class="phone-number"><i class="fas fa-phone"></i> +91 863-988-9101</a>
                 <a href="signin.html" class="btn btn-outline">Sign In</a>
             </div>
             <div class="mobile-menu-toggle">
@@ -213,13 +213,13 @@
     <main class="destination-detail-container">
         <div class="container">
             <div class="destination-detail" id="destination-detail">
-                <!-- Content will be dynamically loaded here -->
+                
             </div>
             
             <div class="gallery-section">
                 <h2>Photo Gallery</h2>
                 <div class="gallery-grid" id="gallery-grid">
-                    <!-- Gallery images will be dynamically loaded here -->
+                    
                 </div>
             </div>
         </div>
@@ -279,11 +279,11 @@
     <script src="theme-toggle.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Get destination ID from URL
+            
             const urlParams = new URLSearchParams(window.location.search);
             const destinationId = urlParams.get('id');
             
-            // Destination data (in a real app, this would come from a database)
+            
             const destinations = [
                 {
                     id: '1',
@@ -482,14 +482,14 @@
                 }
             ];
             
-            // Find the selected destination
+            
             const destination = destinations.find(d => d.id === destinationId);
             
             if (destination) {
-                // Update page title
+                
                 document.title = `${destination.title} - CampWild`;
                 
-                // Populate destination details
+                
                 const detailContainer = document.getElementById('destination-detail');
                 detailContainer.innerHTML = `
                     <div class="destination-image">
@@ -526,7 +526,7 @@
                     </div>
                 `;
                 
-                // Populate gallery
+                
                 const galleryContainer = document.getElementById('gallery-grid');
                 galleryContainer.innerHTML = destination.gallery.map(image => `
                     <div class="gallery-item">
@@ -534,7 +534,7 @@
                     </div>
                 `).join('');
             } else {
-                // Handle case where destination is not found
+                
                 document.getElementById('destination-detail').innerHTML = `
                     <div style="text-align: center; padding: 50px;">
                         <h2>Destination Not Found</h2>

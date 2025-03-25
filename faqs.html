@@ -437,19 +437,19 @@
     <script src="main.js"></script>
     <script src="theme-toggle.js"></script>
     <script>
-        // FAQ Accordion
+        
         document.addEventListener('DOMContentLoaded', function() {
-            // FAQ Item Toggle
+            
             const faqItems = document.querySelectorAll('.faq-item');
             
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 
                 question.addEventListener('click', function() {
-                    // Toggle active class on clicked item
+                    
                     item.classList.toggle('active');
                     
-                    // Close other items
+                    
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains('active')) {
                             otherItem.classList.remove('active');
@@ -458,33 +458,33 @@
                 });
             });
             
-            // FAQ Category Tabs
+            
             const faqTabs = document.querySelectorAll('.faq-tab');
             const faqAccordions = document.querySelectorAll('.faq-accordion');
             
             faqTabs.forEach(tab => {
                 tab.addEventListener('click', function() {
-                    // Remove active class from all tabs
+                    
                     faqTabs.forEach(t => t.classList.remove('active'));
                     
-                    // Add active class to clicked tab
+                    
                     this.classList.add('active');
                     
-                    // Hide all accordions
+                    
                     faqAccordions.forEach(accordion => {
                         accordion.style.display = 'none';
                     });
                     
-                    // Show the selected accordion
+                    
                     const category = this.dataset.category;
                     document.getElementById(category).style.display = 'block';
                     
-                    // Reset accordion items (close all)
+                    
                     faqItems.forEach(item => {
                         item.classList.remove('active');
                     });
                     
-                    // Open the first item in the selected category
+                    
                     const firstItem = document.getElementById(category).querySelector('.faq-item');
                     if (firstItem) {
                         firstItem.classList.add('active');

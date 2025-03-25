@@ -1,4 +1,4 @@
-// Toggle password visibility
+
 const togglePasswordButtons = document.querySelectorAll(".toggle-password")
 
 togglePasswordButtons.forEach((button) => {
@@ -18,14 +18,14 @@ togglePasswordButtons.forEach((button) => {
   })
 })
 
-// Form submission handling
+
 const authForm = document.querySelector(".auth-form")
 
 if (authForm) {
   authForm.addEventListener("submit", function (e) {
     e.preventDefault()
 
-    // Get form data
+    
     const formData = new FormData(this)
     const formDataObj = {}
 
@@ -33,10 +33,10 @@ if (authForm) {
       formDataObj[key] = value
     })
 
-    // Simulate API call
+    
     console.log("Form data:", formDataObj)
 
-    // Store user data in localStorage (for demo purposes only)
+    
     if (this.id === "signup-form") {
       localStorage.setItem(
         "user",
@@ -56,17 +56,17 @@ if (authForm) {
       )
     }
 
-    // Redirect to dashboard or home page
+    
     window.location.href = this.action
   })
 }
 
-// Check if user is logged in
+
 function checkAuthStatus() {
   const user = JSON.parse(localStorage.getItem("user"))
 
   if (user && user.isLoggedIn) {
-    // Update UI for logged in user
+    
     const signInButtons = document.querySelectorAll('.nav-buttons a[href="signin.html"]')
 
     signInButtons.forEach((button) => {
@@ -74,15 +74,15 @@ function checkAuthStatus() {
       button.href = "#"
       button.addEventListener("click", (e) => {
         e.preventDefault()
-        // Clear user data from localStorage
+        
         localStorage.removeItem("user")
-        // Redirect to home page
+        
         window.location.href = "index.html"
       })
     })
   }
 }
 
-// Run on page load
+
 checkAuthStatus()
 

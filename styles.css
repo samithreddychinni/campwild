@@ -1,4 +1,4 @@
-/* Global Styles */
+
 :root {
     --primary-color: #2e7d32;
     --primary-dark: #1b5e20;
@@ -29,7 +29,7 @@
     --success-color: #4caf50;
   }
   
-  /* Dark Theme Variables */
+  
   .dark-theme {
     --primary-color: #4caf50;
     --primary-dark: #388e3c;
@@ -56,7 +56,7 @@
     --success-color: #4caf50;
   }
   
-  /* Theme Transition */
+  
   .theme-transition {
     transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
   }
@@ -100,7 +100,7 @@
     height: auto;
   }
   
-  /* Typography */
+  
   h1,
   h2,
   h3,
@@ -139,7 +139,7 @@
     margin-right: auto;
   }
   
-  /* Buttons */
+  
   .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -211,7 +211,7 @@
     transform: translateX(5px);
   }
   
-  /* Header */
+  
   header {
     position: fixed;
     top: 0;
@@ -282,7 +282,7 @@
     cursor: pointer;
   }
   
-  /* Footer */
+  
   footer {
     background-color: var(--footer-background);
     color: var(--white);
@@ -355,7 +355,7 @@
     color: var(--gray-dark);
   }
   
-  /* Form Elements */
+  
   input,
   select,
   textarea {
@@ -392,7 +392,7 @@
     margin-bottom: 20px;
   }
   
-  /* Tables */
+  
   table {
     width: 100%;
     border-collapse: collapse;
@@ -418,7 +418,7 @@
     background-color: var(--table-row-hover);
   }
   
-  /* Hero Section with Curved Edges */
+  
   .hero {
     position: relative;
     height: 100vh;
@@ -561,7 +561,7 @@
     min-width: 150px;
   }
   
-  /* Clickable Destination Cards */
+  
   .destination-card {
     cursor: pointer;
     transition: var(--transition);
@@ -576,12 +576,12 @@
     margin-top: auto;
   }
   
-  /* Experience Items */
+  
   .experience-item {
     cursor: pointer;
   }
   
-  /* Responsive */
+  
   @media (max-width: 992px) {
     .footer-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -658,7 +658,7 @@
     }
   }
   
-  /* Theme Toggle Button */
+  
   .theme-toggle {
     position: fixed;
     bottom: 30px;
@@ -684,7 +684,7 @@
     background-color: var(--primary-dark);
   }
   
-  /* Auth Form Improvements */
+  
   .auth-card {
     background-color: var(--card-background);
     color: var(--text-color);
@@ -732,7 +732,7 @@
     color: var(--white);
   }
   
-  /* Error and Success Messages */
+  
   .error-message {
     color: var(--error-color);
     font-size: 0.85rem;

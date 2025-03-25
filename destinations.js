@@ -1,9 +1,9 @@
-// Filter functionality
+
 const filterForm = document.querySelector(".filter-form")
 const destinationCards = document.querySelectorAll(".destination-card")
 const paginationContainer = document.querySelector(".pagination")
 
-// Destinations data (in a real app, this would come from a database)
+
 const allDestinations = [
   {
     id: "1",
@@ -114,24 +114,24 @@ const allDestinations = [
   },
 ]
 
-// Pagination settings
+
 let currentPage = 1
 const itemsPerPage = 6
 let filteredDestinations = [...allDestinations]
 
-// Initialize the page
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Check for activity filter in URL
+  
   const urlParams = new URLSearchParams(window.location.search)
   const activityFilter = urlParams.get("activity")
 
   if (activityFilter) {
-    // Pre-filter destinations by activity
+    
     filteredDestinations = allDestinations.filter(
       (destination) => destination.activities && destination.activities.includes(activityFilter),
     )
 
-    // Update UI to show active filter
+    
     const activityName = activityFilter.charAt(0).toUpperCase() + activityFilter.slice(1)
     const filterHeading = document.querySelector(".destinations-list h2")
     if (filterHeading) {
@@ -142,30 +142,30 @@ document.addEventListener("DOMContentLoaded", () => {
   displayDestinations(filteredDestinations, currentPage)
   setupPagination(filteredDestinations)
 
-  // Add event listener for filter form
+  
   if (filterForm) {
     filterForm.addEventListener("submit", (e) => {
       e.preventDefault()
 
-      // Get filter values
+      
       const region = document.getElementById("region").value
       const accommodation = document.getElementById("accommodation").value
       const price = document.getElementById("price").value
       const amenities = document.getElementById("amenities").value
 
-      // Filter destinations
+      
       filteredDestinations = allDestinations.filter((destination) => {
-        // Activity filter from URL
+        
         if (activityFilter && (!destination.activities || !destination.activities.includes(activityFilter))) {
           return false
         }
 
-        // Region filter
+        
         if (region && destination.category !== region) {
           return false
         }
 
-        // Price filter (simplified for demo)
+        
         if (price) {
           const destinationPrice = Number.parseInt(destination.price.replace(/\D/g, ""))
           if (price === "budget" && destinationPrice > 70) return false
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (price === "luxury" && destinationPrice < 130) return false
         }
 
-        // Amenities filter
+        
         if (amenities && !destination.amenities.some((a) => a.toLowerCase().includes(amenities.toLowerCase()))) {
           return false
         }
@@ -182,12 +182,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return true
       })
 
-      // Reset to first page and update display
+      
       currentPage = 1
       displayDestinations(filteredDestinations, currentPage)
       setupPagination(filteredDestinations)
 
-      // Scroll to results
+      
       document.querySelector(".destinations-list").scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Add event listeners for pagination
+  
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("page-link") || e.target.closest(".page-link")) {
       e.preventDefault()
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
       displayDestinations(filteredDestinations, currentPage)
       setupPagination(filteredDestinations)
 
-      // Scroll to top of results
+      
       document.querySelector(".destinations-list").scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -221,12 +221,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  // Make destination cards clickable
+  
   document.addEventListener("click", (e) => {
     const card = e.target.closest(".destination-card")
     if (card) {
       const link = card.querySelector("a").getAttribute("href")
-      // Don't trigger if clicking on the button itself
+      
       if (!e.target.closest("a")) {
         window.location.href = link
       }
@@ -234,17 +234,17 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-// Function to display destinations
+
 function displayDestinations(destinations, page) {
   const destinationsGrid = document.querySelector(".destinations-grid")
   if (!destinationsGrid) return
 
-  // Calculate start and end indices
+  
   const startIndex = (page - 1) * itemsPerPage
   const endIndex = startIndex + itemsPerPage
   const paginatedDestinations = destinations.slice(startIndex, endIndex)
 
-  // Clear the grid
+  
   destinationsGrid.innerHTML = ""
 
   if (paginatedDestinations.length === 0) {
@@ -257,7 +257,7 @@ function displayDestinations(destinations, page) {
     return
   }
 
-  // Add destinations to the grid
+  
   paginatedDestinations.forEach((destination) => {
     const card = document.createElement("div")
     card.className = "destination-card"
@@ -301,28 +301,28 @@ function displayDestinations(destinations, page) {
     destinationsGrid.appendChild(card)
   })
 
-  // Make all cards the same height and align buttons
+  
   equalizeCardHeights()
 }
 
-// Function to set up pagination
+
 function setupPagination(destinations) {
   if (!paginationContainer) return
 
   const totalPages = Math.ceil(destinations.length / itemsPerPage)
 
-  // Clear pagination
+  
   paginationContainer.innerHTML = ""
 
-  // Don't show pagination if there's only one page
+  
   if (totalPages <= 1) return
 
-  // Previous button
+  
   if (currentPage > 1) {
     paginationContainer.innerHTML += `<a href="#" class="page-link" data-page="prev"><i class="fas fa-chevron-left"></i> Prev</a>`
   }
 
-  // Page numbers
+  
   for (let i = 1; i <= totalPages; i++) {
     if (i === currentPage) {
       paginationContainer.innerHTML += `<a href="#" class="page-link active" data-page="${i}">${i}</a>`
@@ -331,33 +331,33 @@ function setupPagination(destinations) {
     }
   }
 
-  // Next button
+  
   if (currentPage < totalPages) {
     paginationContainer.innerHTML += `<a href="#" class="page-link next" data-page="next">Next <i class="fas fa-chevron-right"></i></a>`
   }
 }
 
-// Function to equalize card heights and align buttons
+
 function equalizeCardHeights() {
   const cards = document.querySelectorAll(".destination-card")
   let maxHeight = 0
 
-  // Reset heights
+  
   cards.forEach((card) => {
     card.style.height = "auto"
   })
 
-  // Find max height
+  
   cards.forEach((card) => {
     maxHeight = Math.max(maxHeight, card.offsetHeight)
   })
 
-  // Set all cards to max height
+  
   cards.forEach((card) => {
     card.style.height = `${maxHeight}px`
   })
 
-  // Make all buttons align at the bottom
+  
   cards.forEach((card) => {
     const content = card.querySelector(".destination-content")
     const button = card.querySelector(".btn")
@@ -371,31 +371,30 @@ function equalizeCardHeights() {
   })
 }
 
-// Table sorting functionality
 const comparisonTable = document.querySelector(".comparison-table table")
 
 if (comparisonTable) {
   const headers = comparisonTable.querySelectorAll("th")
 
   headers.forEach((header, index) => {
-    // Skip the first column (destination names)
+    
     if (index === 0) return
 
     header.style.cursor = "pointer"
     header.title = "Click to sort"
 
-    // Add sort icon
+    
     const sortIcon = document.createElement("i")
     sortIcon.className = "fas fa-sort"
     sortIcon.style.marginLeft = "5px"
     sortIcon.style.opacity = "0.5"
     header.appendChild(sortIcon)
 
-    // Add click event
+    
     header.addEventListener("click", function () {
       sortTable(index)
 
-      // Update sort icons
+      
       headers.forEach((h) => {
         const icon = h.querySelector("i")
         if (icon) {
@@ -404,7 +403,7 @@ if (comparisonTable) {
         }
       })
 
-      // Update current sort icon
+      
       sortIcon.style.opacity = "1"
       if (this.asc) {
         sortIcon.className = "fas fa-sort-up"
@@ -415,7 +414,7 @@ if (comparisonTable) {
   })
 }
 
-// Table sorting function
+
 function sortTable(columnIndex) {
   const table = document.querySelector(".comparison-table table")
   let switching = true
@@ -423,10 +422,10 @@ function sortTable(columnIndex) {
   let direction = "asc"
   let switchcount = 0
 
-  // Get the header element
+  
   const header = table.querySelector(`th:nth-child(${columnIndex + 1})`)
 
-  // Toggle sort direction
+  
   if (header.asc) {
     direction = header.asc ? "desc" : "asc"
   }
@@ -466,11 +465,11 @@ function sortTable(columnIndex) {
     }
   }
 
-  // Store sort direction on the header
+  
   header.asc = direction === "asc"
 }
 
-// Handle window resize
+
 window.addEventListener("resize", () => {
   equalizeCardHeights()
 })

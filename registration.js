@@ -1,9 +1,9 @@
-// Date validation
+
 const checkInInput = document.getElementById('check-in');
 const checkOutInput = document.getElementById('check-out');
 
 if (checkInInput && checkOutInput) {
-    // Set minimum check-in date to today
+    
     const today = new Date();
     const yyyy = today.getFullYear();
     const mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -12,18 +12,18 @@ if (checkInInput && checkOutInput) {
     
     checkInInput.setAttribute('min', todayString);
     
-    // Update check-out min date when check-in changes
+
     checkInInput.addEventListener('change', function() {
         checkOutInput.setAttribute('min', this.value);
         
-        // If check-out date is before new check-in date, reset it
+        
         if (checkOutInput.value && checkOutInput.value < this.value) {
             checkOutInput.value = '';
         }
     });
 }
 
-// Calculate and display booking summary
+
 const registrationForm = document.querySelector('.registration-form');
 const destinationSelect = document.getElementById('destination');
 const accommodationSelect = document.getElementById('accommodation');
@@ -33,7 +33,7 @@ const checkInDateInput = document.getElementById('check-in');
 const checkOutDateInput = document.getElementById('check-out');
 const serviceCheckboxes = document.querySelectorAll('input[name="services[]"]');
 
-// Create booking summary element if it doesn't exist
+
 if (registrationForm && !document.querySelector('.booking-summary')) {
     const summarySection = document.createElement('div');
     summarySection.className = 'form-section booking-summary';
@@ -44,14 +44,14 @@ if (registrationForm && !document.querySelector('.booking-summary')) {
         </div>
     `;
     
-    // Insert before payment section
+    
     const paymentSection = document.querySelector('.form-section:nth-last-of-type(2)');
     if (paymentSection) {
         registrationForm.insertBefore(summarySection, paymentSection);
     }
 }
 
-// Update booking summary when form inputs change
+
 function updateBookingSummary() {
     const summaryContent = document.querySelector('.summary-content');
     if (!summaryContent) return;
@@ -63,7 +63,7 @@ function updateBookingSummary() {
     const checkIn = checkInDateInput.value;
     const checkOut = checkOutDateInput.value;
     
-    // Calculate number of nights
+    
     let nights = 0;
     if (checkIn && checkOut) {
         const checkInDate = new Date(checkIn);
@@ -71,7 +71,7 @@ function updateBookingSummary() {
         nights = Math.round((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24));
     }
     
-    // Base rates (simplified for demo)
+    
     const accommodationRates = {
         'tent': 30,
         'cabin': 100,
@@ -80,11 +80,11 @@ function updateBookingSummary() {
         'treehouse': 120
     };
     
-    // Calculate accommodation cost
+    
     const baseRate = accommodationRates[accommodationSelect.value] || 0;
     const accommodationCost = baseRate * nights;
     
-    // Calculate additional services cost
+    
     let servicesCost = 0;
     let servicesHtml = '';
     
@@ -116,10 +116,10 @@ function updateBookingSummary() {
         }
     });
     
-    // Calculate total
+    
     const totalCost = accommodationCost + servicesCost;
     
-    // Update summary HTML
+    
     if (destination && accommodation && nights > 0) {
         summaryContent.innerHTML = `
             <table class="summary-table">
@@ -165,7 +165,7 @@ function updateBookingSummary() {
             </table>
         `;
         
-        // Add CSS for the summary table if not already added
+        
         if (!document.getElementById('summary-styles')) {
             const style = document.createElement('style');
             style.id = 'summary-styles';
@@ -209,7 +209,7 @@ function updateBookingSummary() {
     }
 }
 
-// Helper function to format date
+
 function formatDate(dateString) {
     if (!dateString) return '';
     
@@ -222,7 +222,7 @@ function formatDate(dateString) {
     });
 }
 
-// Add event listeners to update summary
+
 if (registrationForm) {
     const formInputs = registrationForm.querySelectorAll('input, select');
     formInputs.forEach(input => {
@@ -230,12 +230,12 @@ if (registrationForm) {
     });
 }
 
-// Form validation
+
 if (registrationForm) {
     registrationForm.addEventListener('submit', function(e) {
         let isValid = true;
         
-        // Validate check-in and check-out dates
+        
         if (checkInDateInput.value && checkOutDateInput.value) {
             const checkInDate = new Date(checkInDateInput.value);
             const checkOutDate = new Date(checkOutDateInput.value);
@@ -246,10 +246,10 @@ if (registrationForm) {
             }
         }
         
-        // Validate credit card (simple validation for demo)
+        
         const cardNumber = document.getElementById('card-number');
         if (cardNumber && cardNumber.value) {
-            // Remove spaces and check if it's a number with 13-19 digits
+            
             const cardValue = cardNumber.value.replace(/\s/g, '');
             if (!/^\d{13,19}$/.test(cardValue)) {
                 isValid = false;
@@ -257,7 +257,7 @@ if (registrationForm) {
             }
         }
         
-        // Validate expiry date (MM/YY format)
+        
         const expiryDate = document.getElementById('expiry-date');
         if (expiryDate && expiryDate.value) {
             if (!/^\d{2}\/\d{2}$/.test(expiryDate.value)) {
@@ -266,7 +266,7 @@ if (registrationForm) {
             } else {
                 const [month, year] = expiryDate.value.split('/');
                 const now = new Date();
-                const currentYear = now.getFullYear() % 100; // Get last 2 digits
+                const currentYear = now.getFullYear() % 100; 
                 const currentMonth = now.getMonth() + 1;
                 
                 if (parseInt(year) < currentYear || (parseInt(year) === currentYear && parseInt(month) < currentMonth)) {
@@ -276,7 +276,7 @@ if (registrationForm) {
             }
         }
         
-        // Validate CVV (3-4 digits)
+        
         const cvv = document.getElementById('cvv');
         if (cvv && cvv.value) {
             if (!/^\d{3,4}$/.test(cvv.value)) {
@@ -291,7 +291,7 @@ if (registrationForm) {
     });
 }
 
-// Format credit card number with spaces
+
 const cardNumberInput = document.getElementById('card-number');
 if (cardNumberInput) {
     cardNumberInput.addEventListener('input', function(e) {
@@ -309,7 +309,7 @@ if (cardNumberInput) {
     });
 }
 
-// Format expiry date with slash
+
 const expiryDateInput = document.getElementById('expiry-date');
 if (expiryDateInput) {
     expiryDateInput.addEventListener('input', function(e) {

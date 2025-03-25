@@ -525,17 +525,17 @@
     <script src="main.js"></script>
     <script src="theme-toggle.js"></script>
     <script>
-        // Experience filtering
+        
         document.addEventListener('DOMContentLoaded', function() {
             const filterTabs = document.querySelectorAll('.filter-tab');
             const experienceCards = document.querySelectorAll('.experience-card');
             
-            // Check URL parameters for pre-filtering
+            
             const urlParams = new URLSearchParams(window.location.search);
             const typeParam = urlParams.get('type');
             
             if (typeParam) {
-                // Activate the corresponding tab
+                
                 filterTabs.forEach(tab => {
                     if (tab.dataset.filter === typeParam) {
                         tab.classList.add('active');
@@ -544,20 +544,20 @@
                     }
                 });
                 
-                // Filter the experiences
+                
                 filterExperiences(typeParam);
             }
             
-            // Add click event to filter tabs
+            
             filterTabs.forEach(tab => {
                 tab.addEventListener('click', function() {
-                    // Remove active class from all tabs
+                    
                     filterTabs.forEach(t => t.classList.remove('active'));
                     
-                    // Add active class to clicked tab
+                    
                     this.classList.add('active');
                     
-                    // Filter experiences
+                    
                     filterExperiences(this.dataset.filter);
                 });
             });

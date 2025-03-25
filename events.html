@@ -576,23 +576,23 @@
     <script src="main.js"></script>
     <script src="theme-toggle.js"></script>
     <script>
-        // Event filtering
+        
         document.addEventListener('DOMContentLoaded', function() {
             const filterButtons = document.querySelectorAll('.filter-button');
             const eventCards = document.querySelectorAll('.event-card');
             
             filterButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    // Remove active class from all buttons
+                    
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     
-                    // Add active class to clicked button
+                    
                     this.classList.add('active');
                     
-                    // Get filter value
+                    
                     const filter = this.dataset.filter;
                     
-                    // Filter events
+                    
                     eventCards.forEach(card => {
                         if (filter === 'all') {
                             card.style.display = 'block';
