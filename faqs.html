@@ -177,7 +177,7 @@
             </nav>
             <div class="nav-buttons">
                 <a href="tel:+918639889101" class="phone-number"><i class="fas fa-phone"></i> +91 863-988-9101</a>
-                <a href="signin.html" class="btn btn-outline">Sign In</a>
+                <a href="signin.html" class="btn btn-outline">Sign Out</a>
             </div>
             <div class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -436,63 +436,9 @@
 
     <script src="main.js"></script>
     <script src="theme-toggle.js"></script>
-    <script>
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', function() {
-                    
-                    item.classList.toggle('active');
-                    
-                    
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item && otherItem.classList.contains('active')) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-                });
-            });
-            
-            
-            const faqTabs = document.querySelectorAll('.faq-tab');
-            const faqAccordions = document.querySelectorAll('.faq-accordion');
-            
-            faqTabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    
-                    faqTabs.forEach(t => t.classList.remove('active'));
-                    
-                    
-                    this.classList.add('active');
-                    
-                    
-                    faqAccordions.forEach(accordion => {
-                        accordion.style.display = 'none';
-                    });
-                    
-                    
-                    const category = this.dataset.category;
-                    document.getElementById(category).style.display = 'block';
-                    
-                    
-                    faqItems.forEach(item => {
-                        item.classList.remove('active');
-                    });
-                    
-                    
-                    const firstItem = document.getElementById(category).querySelector('.faq-item');
-                    if (firstItem) {
-                        firstItem.classList.add('active');
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="voice-assistant.js"></script>
+    <elevenlabs-convai agent-id="ZVbvgXMTCd8n9Ebts5GZ"></elevenlabs-convai>
+    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
 </body>
 </html>
 

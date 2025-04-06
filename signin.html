@@ -14,6 +14,7 @@
     
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="auth.js"></script>
     <style>
         body {
             background-color: #f5f5f5;
@@ -132,45 +133,10 @@
     </div>
 
     <script>
-        
-        const firebaseConfig = {
-            apiKey: "AIzaSyC6K7BPWYAUKQtFJf4Fcvis0VOi-VRKoz8",
-            authDomain: "camp-wild-1a5cf.firebaseapp.com",
-            projectId: "camp-wild-1a5cf",
-            storageBucket: "camp-wild-1a5cf.firebasestorage.app",
-            messagingSenderId: "673052797100",
-            appId: "1:673052797100:web:2c704b1ad0e45637735709",
-            measurementId: "G-BNMCYSTY0E"
-        };
-        
-        
-        firebase.initializeApp(firebaseConfig);
-        
-        
         const signinForm = document.getElementById('signin-form');
         const emailInput = document.getElementById('email');
         const passwordInput = document.getElementById('password');
         const errorMessage = document.getElementById('error-message');
-        
-        
-        const togglePasswordButtons = document.querySelectorAll(".toggle-password");
-        togglePasswordButtons.forEach((button) => {
-            button.addEventListener("click", function () {
-                const passwordInput = this.previousElementSibling;
-                const icon = this.querySelector("i");
-                
-                if (passwordInput.type === "password") {
-                    passwordInput.type = "text";
-                    icon.classList.remove("fa-eye");
-                    icon.classList.add("fa-eye-slash");
-                } else {
-                    passwordInput.type = "password";
-                    icon.classList.remove("fa-eye-slash");
-                    icon.classList.add("fa-eye");
-                }
-            });
-        });
-        
         
         signinForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -180,23 +146,19 @@
             
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
-                    
                     const user = userCredential.user;
                     console.log("User signed in:", user);
                     window.location.href = "index.html"; 
                 })
                 .catch((error) => {
-                    
                     const errorCode = error.code;
                     const errorMsg = error.message;
                     console.error("Sign in error:", errorCode, errorMsg);
-                    
                     
                     errorMessage.textContent = getErrorMessage(errorCode);
                     errorMessage.style.display = "block";
                 });
         });
-        
         
         function getErrorMessage(errorCode) {
             switch(errorCode) {
@@ -211,20 +173,6 @@
                 default:
                     return 'An error occurred. Please try again.';
             }
-        }
-        
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const checkAuth = urlParams.get('checkAuth');
-        
-        if (checkAuth === 'true') {
-            
-            firebase.auth().onAuthStateChanged((user) => {
-                if (user) {
-                    
-                    window.location.href = "index.html";
-                }
-            });
         }
     </script>
 </body>

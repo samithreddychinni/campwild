@@ -1,0 +1,6 @@
+.vercel
+node_modules
+campwild-win32-x64
+.DS_Store
+*.log
+*.tmp
