@@ -1,4 +1,3 @@
-
 const filterForm = document.querySelector(".filter-form")
 const destinationCards = document.querySelectorAll(".destination-card")
 const paginationContainer = document.querySelector(".pagination")

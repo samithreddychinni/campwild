@@ -1,8 +1,8 @@
 {
-    "build": {
-      "env": {
-        "VERCEL_PKG_MANAGER": "npm"
-      }
+  "build": {
+    "env": {
+      "VERCEL_PKG_MANAGER": "npm"
     }
-  }
-  
+  },
+  "outputDirectory": "."
+}

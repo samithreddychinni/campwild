@@ -1,46 +1,15 @@
 {
-  "name": "campwild-desktop",
+  "name": "campwild",
   "version": "1.0.0",
-  "description": "CampWild Desktop Application",
-  "main": "main.js",
+  "description": "CampWild Web Application",
   "scripts": {
-    "start": "electron .",
-    "build": "electron-packager . campwild --platform=win32 --arch=x64 --icon=icon.ico"
+    "start": "serve .",
+    "build": "echo 'No build step required'"
   },
-  "author": "Your Name",
-  "license": "MIT",
-  "devDependencies": {
-    "electron": "^28.3.3",
-    "electron-builder": "^24.9.1",
-    "electron-packager": "^17.1.2"
+  "dependencies": {
+    "serve": "^14.2.1"
   },
-  "build": {
-    "appId": "com.campwild.desktop",
-    "productName": "CampWild",
-    "directories": {
-      "output": "dist"
-    },
-    "win": {
-      "target": "nsis",
-      "icon": "assets/icon.ico"
-    },
-    "mac": {
-      "target": "dmg",
-      "icon": "assets/icon.icns"
-    },
-    "linux": {
-      "target": "AppImage",
-      "icon": "assets/icon.png"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/samithreddychinni/campwild.git"
-  },
-  "keywords": [],
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/samithreddychinni/campwild/issues"
-  },
-  "homepage": "https://github.com/samithreddychinni/campwild#readme"
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
